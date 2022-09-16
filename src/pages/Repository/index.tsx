@@ -1,7 +1,5 @@
-export default function Repository() {
+export default function Repository({ match }: { match: any }) {
   return (
-    <div>
-      <h1>Rep Page</h1>
-    </div>
+    <h1 style={{ color: "#fff" }}>{decodeURIComponent(match.params.repo)};</h1>
   );
 }
