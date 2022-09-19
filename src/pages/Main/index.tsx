@@ -2,7 +2,7 @@ import { Container, Form, List, DeleteButton } from "./styles";
 import { FaGithub, FaPlus, FaSpinner, FaBars, FaTrash } from "react-icons/fa";
 import { useState, useCallback, useEffect } from "react";
 import api from "../../services/api";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   type Repositorio = {
@@ -12,28 +12,23 @@ export default function Main() {
   const [newRepo, setNewRepo] = useState("");
   const [repositorios, setRepositorios] = useState<Repositorio[]>([]);
   const [loading, setLoading] = useState(false);
-  const [alert,setAlert] = useState(false);
-  
-  
+  const [alert, setAlert] = useState(false);
+
   //Buscar
-  
-  useEffect(()=>{
-    const repoStorage = localStorage.getItem('repos');
-    
-    if(repoStorage){
+
+  useEffect(() => {
+    const repoStorage = localStorage.getItem("repos");
+
+    if (repoStorage) {
       setRepositorios(JSON.parse(repoStorage));
     }
-  },[])
-  
-  
+  }, []);
+
   //Salvar alterações
-  useEffect(()=>{
-    localStorage.setItem('repos',JSON.stringify(repositorios));
-  },[repositorios]);
-  
-  
-  
-  
+  useEffect(() => {
+    localStorage.setItem("repos", JSON.stringify(repositorios));
+  }, [repositorios]);
+
   function handleinputChange(e: any) {
     e.preventDefault();
     setNewRepo(e.target.value);
@@ -92,7 +87,7 @@ export default function Main() {
           Meus Repositórios
         </h1>
 
-        <Form onSubmit={handleSubmit} error = {alert}>
+        <Form onSubmit={handleSubmit} error={alert}>
           <input
             type="text"
             placeholder="Adicionar Repositórios"
@@ -117,7 +112,7 @@ export default function Main() {
                 </DeleteButton>
                 {repo.name}
               </span>
-              <Link to={`/repo/${encodeURIComponent(repo.name)}`}>
+              <Link to={`/repositorio/${encodeURIComponent(repo.name)}`}>
                 <FaBars size={20} />
               </Link>
             </li>
