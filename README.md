@@ -21,11 +21,11 @@
 
 <h3 align="center">Sumário:</h3>
 <p align="center">
- <a href="#page_with_curl-sobre">Sobre</a> •
- <a href="#thinking-como-usar">Como Usar?</a> • 
- <a href="#tecnologias">Tecnologias Utilizadas</a> • 
- <a href="#contribuicao">Imagens</a> • 
- <a href="#autor">Autor</a>
+ <a>Sobre</a> •
+ <a>Como Usar?</a> • 
+ <a>Tecnologias Utilizadas</a> • 
+ <a>Imagens</a> • 
+ <a>Autor</a>
 </p>
 
 ## :page_with_curl: **Sobre**
